@@ -28,33 +28,57 @@ public class VistaFushimiStore extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabelBotonSalir = new javax.swing.JButton();
+        jLabelLogo = new javax.swing.JLabel();
+        jLabelUsuario = new javax.swing.JLabel();
+        jLabelContraseña = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Vista_InicioUsuario");
         setBackground(new java.awt.Color(204, 204, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FushimiStoreImg/Fondo_bunny_morado.jpg"))); // NOI18N
+        jLabelBotonSalir.setBackground(new java.awt.Color(193, 161, 224));
+        jLabelBotonSalir.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
+        jLabelBotonSalir.setForeground(new java.awt.Color(255, 255, 0));
+        jLabelBotonSalir.setText("Salir");
+        jLabelBotonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jLabelBotonSalirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jLabelBotonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 10, 70, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 549, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FushimiStoreImg/BunnyCatLogo-removebg-preview.png"))); // NOI18N
+        getContentPane().add(jLabelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 430, 230));
+
+        jLabelUsuario.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
+        jLabelUsuario.setForeground(new java.awt.Color(92, 24, 125));
+        jLabelUsuario.setText("Usuario: ");
+        getContentPane().add(jLabelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 400, -1, -1));
+
+        jLabelContraseña.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
+        jLabelContraseña.setForeground(new java.awt.Color(92, 24, 125));
+        jLabelContraseña.setText("Contraseña:");
+        getContentPane().add(jLabelContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 460, -1, -1));
+
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FushimiStoreImg/fondo_blanco_corazon_morado.jpg"))); // NOI18N
+        jLabelFondo.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(204, 0, 204), null));
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 549, 660));
 
         getAccessibleContext().setAccessibleDescription("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jLabelBotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLabelBotonSalirActionPerformed
+      System.exit(0);
+    }//GEN-LAST:event_jLabelBotonSalirActionPerformed
+
+    
     /**
      * @param args the command line arguments
      */
@@ -89,6 +113,11 @@ public class VistaFushimiStore extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jLabelBotonSalir;
+    private javax.swing.JLabel jLabelContraseña;
     private javax.swing.JLabel jLabelFondo;
+    private javax.swing.JLabel jLabelLogo;
+    private javax.swing.JLabel jLabelUsuario;
     // End of variables declaration//GEN-END:variables
 }
+
