@@ -1,10 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-package FushimiStoreVista;
 
-import javax.swing.JMenuItem;
+
+package FushimiStoreVista;
+import java.awt.Image;
+import java.awt.Toolkit;
+
 
 /**
  *
@@ -21,6 +20,11 @@ public class PrincipalFushimiStore extends javax.swing.JFrame {
         
     }
     
+    @Override
+    public Image getIconImage(){
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("FushimiStoreImg/BunnyCatLogo.png"));
+        return retValue;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,10 +36,22 @@ public class PrincipalFushimiStore extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabelBotonSalirPrincipal = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jButtonInventario = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jButtonIdeas = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jButtonCalendario = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jButtonVentas = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -44,9 +60,9 @@ public class PrincipalFushimiStore extends javax.swing.JFrame {
         jLabelFondoPrincipal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setIconImage(getIconImage());
         setMinimumSize(new java.awt.Dimension(549, 660));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(549, 660));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelBotonSalirPrincipal.setBackground(new java.awt.Color(193, 161, 224));
@@ -60,17 +76,101 @@ public class PrincipalFushimiStore extends javax.swing.JFrame {
         });
         getContentPane().add(jLabelBotonSalirPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 10, 70, -1));
 
-        jButton1.setText("jButton1");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 480, 160, 50));
+        jButtonInventario.setBackground(new java.awt.Color(164, 109, 164));
+        jButtonInventario.setFont(new java.awt.Font("SimSun", 1, 14)); // NOI18N
+        jButtonInventario.setForeground(new java.awt.Color(153, 255, 204));
+        jButtonInventario.setText("INVENTARIO");
+        jButtonInventario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonInventarioActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, 160, 50));
 
-        jButton2.setText("jButton1");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 270, 160, 50));
+        jLabel4.setBackground(new java.awt.Color(225, 214, 235));
+        jLabel4.setFont(new java.awt.Font("Sitka Subheading", 0, 12)); // NOI18N
+        jLabel4.setText("productos, además de ingresar y eliminar elementos.");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 290, 30));
 
-        jButton3.setText("jButton1");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, 160, 50));
+        jLabel5.setBackground(new java.awt.Color(225, 214, 235));
+        jLabel5.setFont(new java.awt.Font("Sitka Subheading", 0, 12)); // NOI18N
+        jLabel5.setText("En inventario tendrás la opción de ver todos tus ");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, 30));
 
-        jButton4.setText("jButton1");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, 160, 50));
+        jLabel6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 153, 204), new java.awt.Color(255, 153, 204), new java.awt.Color(255, 153, 204), new java.awt.Color(255, 153, 204)));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 320, 50));
+
+        jButtonIdeas.setBackground(new java.awt.Color(164, 109, 164));
+        jButtonIdeas.setFont(new java.awt.Font("SimSun", 1, 14)); // NOI18N
+        jButtonIdeas.setForeground(new java.awt.Color(153, 255, 204));
+        jButtonIdeas.setText("NUEVAS IDEAS");
+        jButtonIdeas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonIdeasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonIdeas, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, 160, 50));
+
+        jLabel7.setBackground(new java.awt.Color(225, 214, 235));
+        jLabel7.setFont(new java.awt.Font("Sitka Subheading", 0, 12)); // NOI18N
+        jLabel7.setText("guardarás todas las inspiraciones para productos nuevos.");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 310, 30));
+
+        jLabel8.setBackground(new java.awt.Color(225, 214, 235));
+        jLabel8.setFont(new java.awt.Font("Sitka Subheading", 0, 12)); // NOI18N
+        jLabel8.setText("\"Nuevas ideas\" es tu biblioteca de creación, donde ");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, -1, 30));
+
+        jLabel9.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 153, 204), new java.awt.Color(255, 153, 204), new java.awt.Color(255, 153, 204), new java.awt.Color(255, 153, 204)));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 320, 50));
+
+        jButtonCalendario.setBackground(new java.awt.Color(164, 109, 164));
+        jButtonCalendario.setFont(new java.awt.Font("SimSun", 1, 14)); // NOI18N
+        jButtonCalendario.setForeground(new java.awt.Color(153, 255, 204));
+        jButtonCalendario.setText("CALENDARIO");
+        jButtonCalendario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCalendarioActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonCalendario, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 450, 160, 50));
+
+        jLabel10.setBackground(new java.awt.Color(225, 214, 235));
+        jLabel10.setFont(new java.awt.Font("Sitka Subheading", 0, 12)); // NOI18N
+        jLabel10.setText("este calendario para apuntar los eventos importantes.");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 310, 30));
+
+        jLabel11.setBackground(new java.awt.Color(225, 214, 235));
+        jLabel11.setFont(new java.awt.Font("Sitka Subheading", 0, 12)); // NOI18N
+        jLabel11.setText("Siempre es necesario mantener un orden, para ello esta");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, -1, 30));
+
+        jLabel12.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 153, 204), new java.awt.Color(255, 153, 204), new java.awt.Color(255, 153, 204), new java.awt.Color(255, 153, 204)));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 320, 50));
+
+        jButtonVentas.setBackground(new java.awt.Color(164, 109, 164));
+        jButtonVentas.setFont(new java.awt.Font("SimSun", 1, 14)); // NOI18N
+        jButtonVentas.setForeground(new java.awt.Color(153, 255, 204));
+        jButtonVentas.setText("VENTAS");
+        jButtonVentas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVentasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 540, 160, 50));
+
+        jLabel13.setBackground(new java.awt.Color(225, 214, 235));
+        jLabel13.setFont(new java.awt.Font("Sitka Subheading", 0, 12)); // NOI18N
+        jLabel13.setText("negocio, además de otra funciones útiles.");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 560, 310, 30));
+
+        jLabel14.setBackground(new java.awt.Color(225, 214, 235));
+        jLabel14.setFont(new java.awt.Font("Sitka Subheading", 0, 12)); // NOI18N
+        jLabel14.setText("Aquí podrá tener un seguimiento de las ganancias de su");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 540, -1, 30));
+
+        jLabel15.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 153, 204), new java.awt.Color(255, 153, 204), new java.awt.Color(255, 153, 204), new java.awt.Color(255, 153, 204)));
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 320, 50));
 
         jPanel1.setBackground(new java.awt.Color(194, 246, 238));
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(227, 168, 227), new java.awt.Color(227, 168, 227), new java.awt.Color(227, 168, 227), new java.awt.Color(227, 168, 227)));
@@ -129,6 +229,30 @@ public class PrincipalFushimiStore extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jLabelBotonSalirPrincipalActionPerformed
 
+    private void jButtonInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInventarioActionPerformed
+        InventarioFushimiStore inventario = new InventarioFushimiStore();
+        inventario.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonInventarioActionPerformed
+
+    private void jButtonIdeasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIdeasActionPerformed
+        IdeaFushimiStore idea = new IdeaFushimiStore();
+        idea.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonIdeasActionPerformed
+
+    private void jButtonCalendarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCalendarioActionPerformed
+        CalendarioFushimiStore calendario = new CalendarioFushimiStore();
+        calendario.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonCalendarioActionPerformed
+
+    private void jButtonVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVentasActionPerformed
+        VentaFushimiStore venta = new VentaFushimiStore();
+        venta.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonVentasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -161,13 +285,25 @@ public class PrincipalFushimiStore extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButtonCalendario;
+    private javax.swing.JButton jButtonIdeas;
+    private javax.swing.JButton jButtonInventario;
+    private javax.swing.JButton jButtonVentas;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JButton jLabelBotonSalirPrincipal;
     private javax.swing.JLabel jLabelFondoPrincipal;
     private javax.swing.JLabel jLabelLogo;
@@ -184,4 +320,4 @@ public class PrincipalFushimiStore extends javax.swing.JFrame {
             new PrincipalFushimiStore().setVisible(true);
         }
     }
-}
+    }
