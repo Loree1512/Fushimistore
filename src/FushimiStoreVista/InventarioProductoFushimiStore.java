@@ -8,12 +8,12 @@ import java.awt.Toolkit;
  *
  * @author Kate
  */
-public class InventarioFushimiStore extends javax.swing.JFrame {
+public class InventarioProductoFushimiStore extends javax.swing.JFrame {
 
     /**
      * Creates new form InventarioFushimiStore
      */
-    public InventarioFushimiStore() {
+    public InventarioProductoFushimiStore() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -33,9 +33,21 @@ public class InventarioFushimiStore extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jToggleButton1 = new javax.swing.JToggleButton();
         jLabelBotonSalirPrincipal = new javax.swing.JButton();
         jLabelBotonVolverPrincipal = new javax.swing.JToggleButton();
+        jTextFieldBarraBuscador = new javax.swing.JTextField();
+        jLabelBuscador = new javax.swing.JLabel();
+        jCheckBoxCategoria = new javax.swing.JCheckBox();
+        jCheckBoxModelo = new javax.swing.JCheckBox();
+        jCheckBoxNombre = new javax.swing.JCheckBox();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jButtonAgregar = new javax.swing.JButton();
+        jButtonEliminar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+
+        jToggleButton1.setText("jToggleButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImage(getIconImage());
@@ -69,6 +81,54 @@ public class InventarioFushimiStore extends javax.swing.JFrame {
         });
         getContentPane().add(jLabelBotonVolverPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 610, 80, 30));
 
+        jTextFieldBarraBuscador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldBarraBuscadorActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldBarraBuscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 340, 30));
+
+        jLabelBuscador.setText("Buscador");
+        getContentPane().add(jLabelBuscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, -1, -1));
+
+        jCheckBoxCategoria.setText("Categoria");
+        getContentPane().add(jCheckBoxCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, -1, -1));
+
+        jCheckBoxModelo.setText("Modelo");
+        getContentPane().add(jCheckBoxModelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, -1, -1));
+
+        jCheckBoxNombre.setText("Nombre");
+        getContentPane().add(jCheckBoxNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Nproduc", "categoria/Tipo", "modelo", "precio", "cantidad"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 450, 400));
+
+        jButtonAgregar.setText("Agregar");
+        getContentPane().add(jButtonAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 550, 90, 30));
+
+        jButtonEliminar.setText("Eliminar");
+        getContentPane().add(jButtonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 550, 100, 30));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FushimiStoreImg/fondo_blanco_corazon_morado.jpg"))); // NOI18N
         jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(204, 0, 204), new java.awt.Color(204, 0, 204)));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 660));
@@ -85,6 +145,10 @@ public class InventarioFushimiStore extends javax.swing.JFrame {
         principal.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jLabelBotonVolverPrincipalActionPerformed
+
+    private void jTextFieldBarraBuscadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBarraBuscadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldBarraBuscadorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -103,27 +167,38 @@ public class InventarioFushimiStore extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InventarioFushimiStore.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InventarioProductoFushimiStore.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InventarioFushimiStore.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InventarioProductoFushimiStore.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InventarioFushimiStore.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InventarioProductoFushimiStore.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InventarioFushimiStore.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InventarioProductoFushimiStore.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InventarioFushimiStore().setVisible(true);
+                new InventarioProductoFushimiStore().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonAgregar;
+    private javax.swing.JButton jButtonEliminar;
+    private javax.swing.JCheckBox jCheckBoxCategoria;
+    private javax.swing.JCheckBox jCheckBoxModelo;
+    private javax.swing.JCheckBox jCheckBoxNombre;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton jLabelBotonSalirPrincipal;
     private javax.swing.JToggleButton jLabelBotonVolverPrincipal;
+    private javax.swing.JLabel jLabelBuscador;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextFieldBarraBuscador;
+    private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }

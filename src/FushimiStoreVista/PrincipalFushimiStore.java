@@ -230,7 +230,7 @@ public class PrincipalFushimiStore extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelBotonSalirPrincipalActionPerformed
 
     private void jButtonInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInventarioActionPerformed
-        InventarioFushimiStore inventario = new InventarioFushimiStore();
+        InventarioProductoFushimiStore inventario = new InventarioProductoFushimiStore();
         inventario.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonInventarioActionPerformed
