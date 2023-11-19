@@ -35,8 +35,12 @@ public class PrincipalFushimiStore extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPopupMenuInventario = new javax.swing.JPopupMenu();
+        jMenuInventarioProducto = new javax.swing.JMenuItem();
+        jMenuInventarioMaretial = new javax.swing.JMenuItem();
         jLabelBotonSalirPrincipal = new javax.swing.JButton();
-        jButtonInventario = new javax.swing.JButton();
+        jButtonInventario1 = new javax.swing.JButton();
+        jLabel16 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -59,6 +63,38 @@ public class PrincipalFushimiStore extends javax.swing.JFrame {
         jLabelLogo = new javax.swing.JLabel();
         jLabelFondoPrincipal = new javax.swing.JLabel();
 
+        jPopupMenuInventario.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 153, 204), new java.awt.Color(255, 153, 204)));
+        jPopupMenuInventario.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+                jPopupMenuInventarioPopupMenuWillBecomeVisible(evt);
+            }
+        });
+        jPopupMenuInventario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPopupMenuInventarioMouseClicked(evt);
+            }
+        });
+
+        jMenuInventarioProducto.setText("Inventario de productos");
+        jMenuInventarioProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuInventarioProductoActionPerformed(evt);
+            }
+        });
+        jPopupMenuInventario.add(jMenuInventarioProducto);
+
+        jMenuInventarioMaretial.setText("Inventario de materiales");
+        jMenuInventarioMaretial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuInventarioMaretialActionPerformed(evt);
+            }
+        });
+        jPopupMenuInventario.add(jMenuInventarioMaretial);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImage(getIconImage());
         setMinimumSize(new java.awt.Dimension(549, 660));
@@ -76,16 +112,22 @@ public class PrincipalFushimiStore extends javax.swing.JFrame {
         });
         getContentPane().add(jLabelBotonSalirPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 10, 70, -1));
 
-        jButtonInventario.setBackground(new java.awt.Color(164, 109, 164));
-        jButtonInventario.setFont(new java.awt.Font("SimSun", 1, 14)); // NOI18N
-        jButtonInventario.setForeground(new java.awt.Color(153, 255, 204));
-        jButtonInventario.setText("INVENTARIO");
-        jButtonInventario.addActionListener(new java.awt.event.ActionListener() {
+        jButtonInventario1.setBackground(new java.awt.Color(164, 109, 164));
+        jButtonInventario1.setFont(new java.awt.Font("SimSun", 1, 14)); // NOI18N
+        jButtonInventario1.setForeground(new java.awt.Color(153, 255, 204));
+        jButtonInventario1.setText("INVENTARIO");
+        jButtonInventario1.setComponentPopupMenu(jPopupMenuInventario);
+        jButtonInventario1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonInventarioActionPerformed(evt);
+                jButtonInventario1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, 160, 50));
+        getContentPane().add(jButtonInventario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, 160, 50));
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(204, 153, 255));
+        jLabel16.setText("Click derecho");
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, 140, -1));
 
         jLabel4.setBackground(new java.awt.Color(225, 214, 235));
         jLabel4.setFont(new java.awt.Font("Sitka Subheading", 0, 12)); // NOI18N
@@ -229,12 +271,6 @@ public class PrincipalFushimiStore extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jLabelBotonSalirPrincipalActionPerformed
 
-    private void jButtonInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInventarioActionPerformed
-        InventarioProductoFushimiStore inventario = new InventarioProductoFushimiStore();
-        inventario.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jButtonInventarioActionPerformed
-
     private void jButtonIdeasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIdeasActionPerformed
         IdeaFushimiStore idea = new IdeaFushimiStore();
         idea.setVisible(true);
@@ -252,6 +288,30 @@ public class PrincipalFushimiStore extends javax.swing.JFrame {
         venta.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonVentasActionPerformed
+
+    private void jPopupMenuInventarioPopupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_jPopupMenuInventarioPopupMenuWillBecomeVisible
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPopupMenuInventarioPopupMenuWillBecomeVisible
+
+    private void jPopupMenuInventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPopupMenuInventarioMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPopupMenuInventarioMouseClicked
+
+    private void jButtonInventario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInventario1ActionPerformed
+        // TODO add your handling code here: InventarioMaterialFushimiStore
+    }//GEN-LAST:event_jButtonInventario1ActionPerformed
+
+    private void jMenuInventarioProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuInventarioProductoActionPerformed
+        InventarioProductoFushimiStore inventarioProducto = new InventarioProductoFushimiStore();
+        inventarioProducto.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuInventarioProductoActionPerformed
+
+    private void jMenuInventarioMaretialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuInventarioMaretialActionPerformed
+        InventarioMaterialFushimiStore inventarioMaterial = new InventarioMaterialFushimiStore();
+        inventarioMaterial.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuInventarioMaretialActionPerformed
 
     /**
      * @param args the command line arguments
@@ -287,7 +347,7 @@ public class PrincipalFushimiStore extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCalendario;
     private javax.swing.JButton jButtonIdeas;
-    private javax.swing.JButton jButtonInventario;
+    private javax.swing.JButton jButtonInventario1;
     private javax.swing.JButton jButtonVentas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -296,6 +356,7 @@ public class PrincipalFushimiStore extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -307,7 +368,10 @@ public class PrincipalFushimiStore extends javax.swing.JFrame {
     private javax.swing.JButton jLabelBotonSalirPrincipal;
     private javax.swing.JLabel jLabelFondoPrincipal;
     private javax.swing.JLabel jLabelLogo;
+    private javax.swing.JMenuItem jMenuInventarioMaretial;
+    private javax.swing.JMenuItem jMenuInventarioProducto;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPopupMenu jPopupMenuInventario;
     // End of variables declaration//GEN-END:variables
 
     private static class RunnableImpl implements Runnable {
