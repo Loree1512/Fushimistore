@@ -34,6 +34,11 @@ public class CalendarioFushimiStore extends javax.swing.JFrame {
 
         jLabelBotonSalirPrincipal = new javax.swing.JButton();
         jLabelBotonVolverPrincipal = new javax.swing.JToggleButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jCalendar1 = new com.toedter.calendar.JCalendar();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -65,6 +70,28 @@ public class CalendarioFushimiStore extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabelBotonVolverPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 610, 80, 30));
+
+        jLabel3.setText("No olvidar:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 70, 20));
+
+        jLabel4.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(185, 231, 185), new java.awt.Color(185, 231, 185)));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 80, 20));
+
+        jLabel5.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(185, 231, 185), new java.awt.Color(185, 231, 185)));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 490, 220));
+
+        jCalendar1.setBackground(new java.awt.Color(249, 196, 222));
+        jCalendar1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(243, 103, 173), new java.awt.Color(243, 103, 173)));
+        jCalendar1.setDecorationBackgroundColor(new java.awt.Color(251, 186, 227));
+        jCalendar1.setDecorationBordersVisible(true);
+        jCalendar1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jCalendar1.setWeekdayForeground(new java.awt.Color(123, 123, 211));
+        getContentPane().add(jCalendar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 440, 250));
+
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 0, 102));
+        jLabel2.setText("CALENDARIO");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 120, 20));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FushimiStoreImg/fondo_blanco_corazon_morado.jpg"))); // NOI18N
         jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(204, 0, 153), new java.awt.Color(204, 0, 153)));
@@ -119,7 +146,12 @@ public class CalendarioFushimiStore extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.toedter.calendar.JCalendar jCalendar1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JButton jLabelBotonSalirPrincipal;
     private javax.swing.JToggleButton jLabelBotonVolverPrincipal;
     // End of variables declaration//GEN-END:variables
