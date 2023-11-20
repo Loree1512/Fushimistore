@@ -3,8 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package FushimiStoreVista;
+import static FushimiStoreModelo.ConexionBD.obtenerConexion;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.sql.Connection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -18,6 +22,7 @@ public class VistaFushimiStore extends javax.swing.JFrame {
      */
     public VistaFushimiStore() {
         initComponents();
+        //Centra la pestaña..
         this.setLocationRelativeTo(null);
     }
 
@@ -76,7 +81,7 @@ public class VistaFushimiStore extends javax.swing.JFrame {
         jLabel1.setText("Fushimi Store");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 300, 120, -1));
 
-        jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FushimiStoreImg/BunnyCatLogo-removebg-preview.png"))); // NOI18N
+        jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FushimiStoreImg/BunnyCatLogo.png"))); // NOI18N
         getContentPane().add(jLabelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 430, 230));
 
         jLabelUsuario.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
@@ -129,9 +134,16 @@ public class VistaFushimiStore extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldUsuarioActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        PrincipalFushimiStore principal = new PrincipalFushimiStore();
-        principal.setVisible(true);
-        this.setVisible(false);
+        try {
+            Connection obtenerConexion = obtenerConexion();
+            
+            PrincipalFushimiStore principal = new PrincipalFushimiStore();
+            
+            principal.setVisible(true);
+            this.setVisible(false);
+        } catch (Exception ex) {
+            Logger.getLogger(VistaFushimiStore.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     
