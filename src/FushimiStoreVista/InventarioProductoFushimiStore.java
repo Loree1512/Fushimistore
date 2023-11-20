@@ -38,6 +38,7 @@ public class InventarioProductoFushimiStore extends javax.swing.JFrame {
         jLabelBotonVolverPrincipal = new javax.swing.JToggleButton();
         jTextFieldBarraBuscador = new javax.swing.JTextField();
         jLabelBuscador = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jCheckBoxCategoria = new javax.swing.JCheckBox();
         jCheckBoxModelo = new javax.swing.JCheckBox();
         jCheckBoxNombre = new javax.swing.JCheckBox();
@@ -88,8 +89,13 @@ public class InventarioProductoFushimiStore extends javax.swing.JFrame {
         });
         getContentPane().add(jTextFieldBarraBuscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 340, 30));
 
+        jLabelBuscador.setFont(new java.awt.Font("SimSun", 1, 14)); // NOI18N
+        jLabelBuscador.setForeground(new java.awt.Color(153, 0, 153));
         jLabelBuscador.setText("Buscador");
-        getContentPane().add(jLabelBuscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, -1, -1));
+        getContentPane().add(jLabelBuscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 46, -1, 20));
+
+        jLabel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 153, 255), new java.awt.Color(255, 153, 255)));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 80, 30));
 
         jCheckBoxCategoria.setText("Categoria");
         getContentPane().add(jCheckBoxCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, -1, -1));
@@ -100,6 +106,7 @@ public class InventarioProductoFushimiStore extends javax.swing.JFrame {
         jCheckBoxNombre.setText("Nombre");
         getContentPane().add(jCheckBoxNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
 
+        jTable1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(204, 255, 255), new java.awt.Color(204, 255, 255)));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -119,18 +126,32 @@ public class InventarioProductoFushimiStore extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        jTable1.setGridColor(new java.awt.Color(160, 203, 203));
+        jTable1.setInheritsPopupMenu(true);
+        jTable1.setSelectionBackground(new java.awt.Color(163, 218, 218));
         jScrollPane1.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 450, 400));
 
+        jButtonAgregar.setBackground(new java.awt.Color(144, 236, 236));
+        jButtonAgregar.setFont(new java.awt.Font("Tw Cen MT", 1, 16)); // NOI18N
+        jButtonAgregar.setForeground(new java.awt.Color(153, 0, 153));
         jButtonAgregar.setText("Agregar");
-        getContentPane().add(jButtonAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 550, 90, 30));
+        getContentPane().add(jButtonAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 550, 100, 30));
 
+        jButtonEliminar.setBackground(new java.awt.Color(144, 236, 236));
+        jButtonEliminar.setFont(new java.awt.Font("Tw Cen MT", 1, 16)); // NOI18N
+        jButtonEliminar.setForeground(new java.awt.Color(153, 0, 153));
         jButtonEliminar.setText("Eliminar");
-        getContentPane().add(jButtonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 550, 100, 30));
+        jButtonEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEliminarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 550, 100, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FushimiStoreImg/fondo_blanco_corazon_morado.jpg"))); // NOI18N
-        jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(204, 0, 204), new java.awt.Color(204, 0, 204)));
+        jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 153, 153), new java.awt.Color(0, 153, 153)));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 660));
 
         pack();
@@ -149,6 +170,10 @@ public class InventarioProductoFushimiStore extends javax.swing.JFrame {
     private void jTextFieldBarraBuscadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBarraBuscadorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldBarraBuscadorActionPerformed
+
+    private void jButtonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonEliminarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,6 +218,7 @@ public class InventarioProductoFushimiStore extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBoxModelo;
     private javax.swing.JCheckBox jCheckBoxNombre;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton jLabelBotonSalirPrincipal;
     private javax.swing.JToggleButton jLabelBotonVolverPrincipal;
     private javax.swing.JLabel jLabelBuscador;
