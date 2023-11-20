@@ -34,6 +34,7 @@ public class IdeaFushimiStore extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jCalendar1 = new com.toedter.calendar.JCalendar();
         jLabelBotonSalirPrincipal = new javax.swing.JButton();
         jLabelBotonVolverPrincipal = new javax.swing.JToggleButton();
         jLabel3 = new javax.swing.JLabel();
@@ -162,6 +163,7 @@ public class IdeaFushimiStore extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAgregar;
     private javax.swing.JButton jButtonEliminar;
+    private com.toedter.calendar.JCalendar jCalendar1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
