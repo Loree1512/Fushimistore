@@ -4,6 +4,9 @@
  */
 package FushimiStoreVista;
 
+import java.awt.Image;
+import java.awt.Toolkit;
+
 /**
  *
  * @author Kate
@@ -15,8 +18,14 @@ public class InventarioMaterialFushimiStore extends javax.swing.JFrame {
      */
     public InventarioMaterialFushimiStore() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
+        @Override
+    public Image getIconImage(){
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("FushimiStoreImg/BunnyCatLogo.png"));
+        return retValue;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,27 +35,134 @@ public class InventarioMaterialFushimiStore extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabelBotonSalirPrincipal = new javax.swing.JButton();
+        jLabelBotonVolverPrincipal = new javax.swing.JToggleButton();
+        jTextFieldBarraBuscador = new javax.swing.JTextField();
+        jLabelBuscador = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jCheckBoxNombre = new javax.swing.JCheckBox();
+        jCheckBoxCategoria = new javax.swing.JCheckBox();
+        jCheckBoxModelo = new javax.swing.JCheckBox();
+        jButtonAgregar = new javax.swing.JButton();
+        jButtonEliminar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabelFONDO = new javax.swing.JLabel();
+
+        jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setIconImage(getIconImage());
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 512, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(0, 660, Short.MAX_VALUE))
-        );
+        jLabelBotonSalirPrincipal.setBackground(new java.awt.Color(193, 161, 224));
+        jLabelBotonSalirPrincipal.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
+        jLabelBotonSalirPrincipal.setForeground(new java.awt.Color(255, 255, 0));
+        jLabelBotonSalirPrincipal.setText("Salir");
+        jLabelBotonSalirPrincipal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jLabelBotonSalirPrincipalActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jLabelBotonSalirPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 10, 70, -1));
+
+        jLabelBotonVolverPrincipal.setBackground(new java.awt.Color(193, 161, 224));
+        jLabelBotonVolverPrincipal.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
+        jLabelBotonVolverPrincipal.setForeground(new java.awt.Color(255, 255, 0));
+        jLabelBotonVolverPrincipal.setText("Volver");
+        jLabelBotonVolverPrincipal.setMaximumSize(new java.awt.Dimension(72, 28));
+        jLabelBotonVolverPrincipal.setMinimumSize(new java.awt.Dimension(72, 28));
+        jLabelBotonVolverPrincipal.setPreferredSize(new java.awt.Dimension(72, 28));
+        jLabelBotonVolverPrincipal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jLabelBotonVolverPrincipalActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jLabelBotonVolverPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 610, 80, 30));
+
+        jTextFieldBarraBuscador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldBarraBuscadorActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextFieldBarraBuscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 340, 30));
+
+        jLabelBuscador.setFont(new java.awt.Font("SimSun", 1, 14)); // NOI18N
+        jLabelBuscador.setForeground(new java.awt.Color(102, 0, 102));
+        jLabelBuscador.setText("Buscador");
+        getContentPane().add(jLabelBuscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 80, 30));
+
+        jLabel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 153, 255), new java.awt.Color(255, 153, 255)));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 80, 30));
+
+        jCheckBoxNombre.setText("Nombre");
+        getContentPane().add(jCheckBoxNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
+
+        jCheckBoxCategoria.setText("Categoria");
+        getContentPane().add(jCheckBoxCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, -1, -1));
+
+        jCheckBoxModelo.setText("Modelo");
+        getContentPane().add(jCheckBoxModelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, -1, -1));
+
+        jButtonAgregar.setBackground(new java.awt.Color(255, 153, 204));
+        jButtonAgregar.setFont(new java.awt.Font("Tw Cen MT", 1, 16)); // NOI18N
+        jButtonAgregar.setForeground(new java.awt.Color(153, 0, 102));
+        jButtonAgregar.setText("Agregar");
+        getContentPane().add(jButtonAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 550, 90, 30));
+
+        jButtonEliminar.setBackground(new java.awt.Color(255, 153, 204));
+        jButtonEliminar.setFont(new java.awt.Font("Tw Cen MT", 1, 16)); // NOI18N
+        jButtonEliminar.setForeground(new java.awt.Color(153, 0, 102));
+        jButtonEliminar.setText("Eliminar");
+        getContentPane().add(jButtonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 550, 100, 30));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Nproduc", "categoria/Tipo", "modelo", "precio", "cantidad"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jTable1.setGridColor(new java.awt.Color(249, 205, 227));
+        jTable1.setSelectionBackground(new java.awt.Color(249, 205, 227));
+        jScrollPane1.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 450, 400));
+
+        jLabelFONDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FushimiStoreImg/fondo_blanco_corazon_morado.jpg"))); // NOI18N
+        jLabelFONDO.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 102, 204), new java.awt.Color(255, 102, 204)));
+        getContentPane().add(jLabelFONDO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 549, 660));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jLabelBotonSalirPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLabelBotonSalirPrincipalActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jLabelBotonSalirPrincipalActionPerformed
+
+    private void jLabelBotonVolverPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLabelBotonVolverPrincipalActionPerformed
+        PrincipalFushimiStore principal = new PrincipalFushimiStore();
+        principal.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabelBotonVolverPrincipalActionPerformed
+
+    private void jTextFieldBarraBuscadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBarraBuscadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldBarraBuscadorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -84,6 +200,19 @@ public class InventarioMaterialFushimiStore extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButtonAgregar;
+    private javax.swing.JButton jButtonEliminar;
+    private javax.swing.JCheckBox jCheckBoxCategoria;
+    private javax.swing.JCheckBox jCheckBoxModelo;
+    private javax.swing.JCheckBox jCheckBoxNombre;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton jLabelBotonSalirPrincipal;
+    private javax.swing.JToggleButton jLabelBotonVolverPrincipal;
+    private javax.swing.JLabel jLabelBuscador;
+    private javax.swing.JLabel jLabelFONDO;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextFieldBarraBuscador;
     // End of variables declaration//GEN-END:variables
 }
