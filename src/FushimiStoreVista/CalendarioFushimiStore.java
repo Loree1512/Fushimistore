@@ -64,14 +64,18 @@ public class CalendarioFushimiStore extends javax.swing.JFrame {
         jDireccionEvento = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jTelefonoEvento = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jNotas = new javax.swing.JTextPane();
-        jBotonMostrar = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jPrecioPuesto = new javax.swing.JTextField();
         jBotonNuevo = new javax.swing.JButton();
-        jBotonAgregar = new javax.swing.JButton();
+        jBotonGuardar = new javax.swing.JButton();
+        jBotonEliminar = new javax.swing.JButton();
         jLabelBotonSalirPrincipal = new javax.swing.JButton();
         jLabelBotonVolverPrincipal = new javax.swing.JToggleButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jCalendar1 = new com.toedter.calendar.JCalendar();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -89,11 +93,11 @@ public class CalendarioFushimiStore extends javax.swing.JFrame {
                 jNombreEventoActionPerformed(evt);
             }
         });
-        getContentPane().add(jNombreEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 120, -1));
+        getContentPane().add(jNombreEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 82, 120, 30));
 
         jLabel7.setText("Dirección:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
-        getContentPane().add(jDireccionEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 350, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, -1, 30));
+        getContentPane().add(jDireccionEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 350, 30));
 
         jLabel8.setText("Teléfono:");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, -1, -1));
@@ -103,19 +107,11 @@ public class CalendarioFushimiStore extends javax.swing.JFrame {
                 jTelefonoEventoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTelefonoEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, 130, -1));
+        getContentPane().add(jTelefonoEvento, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 82, 130, 30));
 
-        jScrollPane1.setViewportView(jNotas);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, 470, 120));
-
-        jBotonMostrar.setText("Ver");
-        jBotonMostrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBotonMostrarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jBotonMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, 60, -1));
+        jLabel3.setText("Precio puesto:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, -1, -1));
+        getContentPane().add(jPrecioPuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 120, 110, 30));
 
         jBotonNuevo.setBackground(new java.awt.Color(255, 153, 204));
         jBotonNuevo.setFont(new java.awt.Font("Tw Cen MT", 1, 16)); // NOI18N
@@ -126,18 +122,29 @@ public class CalendarioFushimiStore extends javax.swing.JFrame {
                 jBotonNuevoActionPerformed(evt);
             }
         });
-        getContentPane().add(jBotonNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, 90, 20));
+        getContentPane().add(jBotonNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 90, 30));
 
-        jBotonAgregar.setBackground(new java.awt.Color(255, 153, 204));
-        jBotonAgregar.setFont(new java.awt.Font("Tw Cen MT", 1, 16)); // NOI18N
-        jBotonAgregar.setForeground(new java.awt.Color(153, 0, 102));
-        jBotonAgregar.setText("Agregar");
-        jBotonAgregar.addActionListener(new java.awt.event.ActionListener() {
+        jBotonGuardar.setBackground(new java.awt.Color(255, 153, 204));
+        jBotonGuardar.setFont(new java.awt.Font("Tw Cen MT", 1, 16)); // NOI18N
+        jBotonGuardar.setForeground(new java.awt.Color(153, 0, 102));
+        jBotonGuardar.setText("Guardar");
+        jBotonGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBotonAgregarActionPerformed(evt);
+                jBotonGuardarActionPerformed(evt);
             }
         });
-        getContentPane().add(jBotonAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 90, 20));
+        getContentPane().add(jBotonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 90, 30));
+
+        jBotonEliminar.setBackground(new java.awt.Color(255, 153, 204));
+        jBotonEliminar.setFont(new java.awt.Font("Tw Cen MT", 1, 16)); // NOI18N
+        jBotonEliminar.setForeground(new java.awt.Color(153, 0, 102));
+        jBotonEliminar.setText("Eliminar");
+        jBotonEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBotonEliminarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBotonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, 90, 30));
 
         jLabelBotonSalirPrincipal.setBackground(new java.awt.Color(193, 161, 224));
         jLabelBotonSalirPrincipal.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
@@ -164,8 +171,27 @@ public class CalendarioFushimiStore extends javax.swing.JFrame {
         });
         getContentPane().add(jLabelBotonVolverPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 610, 80, 30));
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 470, 470, 120));
+
         jLabel5.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(185, 231, 185), new java.awt.Color(185, 231, 185)));
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 490, 170));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, 490, 140));
+
+        jLabel4.setText("Fecha evento:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 100, 30));
+        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 120, 30));
 
         jCalendar1.setBackground(new java.awt.Color(249, 196, 222));
         jCalendar1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(243, 103, 173), new java.awt.Color(243, 103, 173)));
@@ -173,12 +199,12 @@ public class CalendarioFushimiStore extends javax.swing.JFrame {
         jCalendar1.setDecorationBordersVisible(true);
         jCalendar1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jCalendar1.setWeekdayForeground(new java.awt.Color(123, 123, 211));
-        getContentPane().add(jCalendar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 440, 230));
+        getContentPane().add(jCalendar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 440, 190));
 
         jLabel2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 0, 102));
-        jLabel2.setText("CALENDARIO");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 120, 20));
+        jLabel2.setText("EVENTOS");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 180, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FushimiStoreImg/fondo_blanco_corazon_morado.jpg"))); // NOI18N
         jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(204, 0, 153), new java.awt.Color(204, 0, 153)));
@@ -210,7 +236,7 @@ public class CalendarioFushimiStore extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jBotonNuevoActionPerformed
 
-    private void jBotonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonAgregarActionPerformed
+    private void jBotonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonGuardarActionPerformed
         
         RegistroTotal++;
         RegistroActual = RegistroTotal;
@@ -218,20 +244,11 @@ public class CalendarioFushimiStore extends javax.swing.JFrame {
         strTelefono[RegistroTotal] = jTelefonoEvento.getText();
         strDireccion[RegistroTotal] = jDireccionEvento.getText();
         
-    }//GEN-LAST:event_jBotonAgregarActionPerformed
+    }//GEN-LAST:event_jBotonGuardarActionPerformed
 
-    private void jBotonMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonMostrarActionPerformed
-        if(RegistroActual > 0)
-        {
-            RegistroActual--;
-            MostrarRegistros(RegistroActual);
-        }
-        else
-        {
-            RegistroActual = RegistroTotal;
-            MostrarRegistros(RegistroActual);
-        }
-    }//GEN-LAST:event_jBotonMostrarActionPerformed
+    private void jBotonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonEliminarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBotonEliminarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -269,13 +286,16 @@ public class CalendarioFushimiStore extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBotonAgregar;
-    private javax.swing.JButton jBotonMostrar;
+    private javax.swing.JButton jBotonEliminar;
+    private javax.swing.JButton jBotonGuardar;
     private javax.swing.JButton jBotonNuevo;
     private com.toedter.calendar.JCalendar jCalendar1;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JTextField jDireccionEvento;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -283,8 +303,9 @@ public class CalendarioFushimiStore extends javax.swing.JFrame {
     private javax.swing.JButton jLabelBotonSalirPrincipal;
     private javax.swing.JToggleButton jLabelBotonVolverPrincipal;
     private javax.swing.JTextField jNombreEvento;
-    private javax.swing.JTextPane jNotas;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jPrecioPuesto;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTelefonoEvento;
     // End of variables declaration//GEN-END:variables
 }
