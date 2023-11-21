@@ -68,14 +68,14 @@ public class InventarioMateriales {
     
     public static void eliminarMaterial() throws Exception {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("ID del material a eliminar: ");
-        int id = scanner.nextInt();
+        System.out.print("Nombre del material a eliminar: ");
+        String nombre = scanner.next();
         scanner.nextLine();  // Consume newline left-over
 
         try (Connection connection = ConexionBD.obtenerConexion()) {
-            String sql = "DELETE FROM MATERIAL WHERE ID = ?";
+            String sql = "DELETE FROM MATERIAL WHERE NOMBRE_MATERIAL = ?";
             PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setInt(1, id);
+            statement.setString(1, nombre);
             statement.executeUpdate();
 
             System.out.println("Material eliminado exitosamente.");

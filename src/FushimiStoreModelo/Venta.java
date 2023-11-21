@@ -4,6 +4,8 @@
  */
 package FushimiStoreModelo;
 
+import java.util.Date;
+
 /**
  *
  * @author Loreto
