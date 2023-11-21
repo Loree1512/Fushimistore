@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 
 /**
  *
@@ -17,15 +18,17 @@ import java.sql.SQLException;
 public class test {
     
     public static void main (String [] args) throws Exception{
-        mostrarProductos();
+        mostrarEventos();
+        
         
     }
     
     public static void mostrarProductos() throws Exception {
         String sql = "SELECT * FROM PRODUCTO";
-        try (Connection connection = ConexionBD.obtenerConexion();
-             PreparedStatement statement = connection.prepareStatement(sql);
-             ResultSet resultSet = statement.executeQuery()) {
+        try {
+            Connection connection = ConexionBD.obtenerConexion();
+            PreparedStatement statement = connection.prepareStatement(sql);
+            ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
                 int id = resultSet.getInt("ID");
@@ -39,6 +42,27 @@ public class test {
 
         } catch (SQLException e) {
             System.err.println("Error al obtener la lista de productos: " + e.getMessage());
+        }
+    }
+    
+    public static void mostrarEventos() throws Exception {
+        String sql = "SELECT * FROM EVENTO";
+        try (Connection connection = ConexionBD.obtenerConexion();
+             PreparedStatement statement = connection.prepareStatement(sql);
+             ResultSet resultSet = statement.executeQuery()) {
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("ID");
+                String nombre = resultSet.getString("NOMBRE_EVENTO");
+                String lugar = resultSet.getString("LUGAR_EVENTO");
+                int telefono = resultSet.getInt("TELEFONO_EVENTO");
+                int cuota = resultSet.getInt("CUOTA_EVENTO");
+                Date fecha = resultSet.getDate("FECHA_EVENTO");
+                System.out.println("ID: " + id + ", NOMBRE: " + nombre + ", LUGAR: " + lugar + ", TELEFONO: " + telefono + ", CUOTA: " + cuota + ", FECHA: " + fecha);
+            }
+
+        } catch (SQLException e) {
+            System.err.println("Error al obtener la lista de eventos: " + e.getMessage());
         }
     }
 }
