@@ -6,7 +6,7 @@ package FushimiStoreModelo;
 
 /**
  *
- * @author IdeaPad 330S
+ * @author Loreto
  */
 public class Idea {
     
