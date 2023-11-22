@@ -2,11 +2,16 @@
 package FushimiStoreVista;
 
 import FushimiStoreModelo.ConexionBD;
+import FushimiStoreModelo.InventarioProductos;
 import FushimiStoreUtils.Utils;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import java.lang.String;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -15,6 +20,9 @@ import javax.swing.table.DefaultTableModel;
  */
 public class InventarioProductoFushimiStore extends javax.swing.JFrame {
     
+    
+
+        private final InventarioProductos invp ;
         ConexionBD con = new ConexionBD();
         Connection conect;
         DefaultTableModel modelo;
@@ -30,7 +38,7 @@ public class InventarioProductoFushimiStore extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         Utils.cambiarFondoJFrame(this);
         consultar();
-        
+        invp = new InventarioProductos();
     }
 
 
@@ -47,22 +55,22 @@ public class InventarioProductoFushimiStore extends javax.swing.JFrame {
         jPanelDatos = new javax.swing.JPanel();
         jLabelBuscador = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextFieldBarraBuscador = new javax.swing.JTextField();
+        jTextFieldNombre = new javax.swing.JTextField();
         jCheckBoxNombre = new javax.swing.JCheckBox();
         jCheckBoxCategoria = new javax.swing.JCheckBox();
         jCheckBoxModelo = new javax.swing.JCheckBox();
         jLabelBuscador1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextFieldBarraBuscador1 = new javax.swing.JTextField();
+        jTextFieldCategoria = new javax.swing.JTextField();
         jLabelBuscador2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextFieldBarraBuscador2 = new javax.swing.JTextField();
+        jTextFieldModeloP = new javax.swing.JTextField();
         jLabelBuscador3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextFieldBarraBuscador3 = new javax.swing.JTextField();
+        jTextFieldPrecio = new javax.swing.JTextField();
         jLabelBuscador4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextFieldBarraBuscador4 = new javax.swing.JTextField();
+        jTextFieldCantidad = new javax.swing.JTextField();
         jLabelBuscador5 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jTextFieldBarraBuscador5 = new javax.swing.JTextField();
@@ -131,12 +139,12 @@ public class InventarioProductoFushimiStore extends javax.swing.JFrame {
         jLabel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 153, 255), new java.awt.Color(255, 153, 255)));
         jPanelDatos.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 80, 20));
 
-        jTextFieldBarraBuscador.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldBarraBuscadorActionPerformed(evt);
+                jTextFieldNombreActionPerformed(evt);
             }
         });
-        jPanelDatos.add(jTextFieldBarraBuscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 130, 20));
+        jPanelDatos.add(jTextFieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 130, 20));
 
         jCheckBoxNombre.setText("Nombre");
         jPanelDatos.add(jCheckBoxNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, -1, -1));
@@ -155,12 +163,12 @@ public class InventarioProductoFushimiStore extends javax.swing.JFrame {
         jLabel5.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 153, 255), new java.awt.Color(255, 153, 255)));
         jPanelDatos.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 90, 20));
 
-        jTextFieldBarraBuscador1.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldBarraBuscador1ActionPerformed(evt);
+                jTextFieldCategoriaActionPerformed(evt);
             }
         });
-        jPanelDatos.add(jTextFieldBarraBuscador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 130, 20));
+        jPanelDatos.add(jTextFieldCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 130, 20));
 
         jLabelBuscador2.setFont(new java.awt.Font("SimSun", 1, 14)); // NOI18N
         jLabelBuscador2.setForeground(new java.awt.Color(153, 0, 153));
@@ -170,12 +178,12 @@ public class InventarioProductoFushimiStore extends javax.swing.JFrame {
         jLabel6.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 153, 255), new java.awt.Color(255, 153, 255)));
         jPanelDatos.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 80, 20));
 
-        jTextFieldBarraBuscador2.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldModeloP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldBarraBuscador2ActionPerformed(evt);
+                jTextFieldModeloPActionPerformed(evt);
             }
         });
-        jPanelDatos.add(jTextFieldBarraBuscador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 130, 20));
+        jPanelDatos.add(jTextFieldModeloP, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 130, 20));
 
         jLabelBuscador3.setFont(new java.awt.Font("SimSun", 1, 14)); // NOI18N
         jLabelBuscador3.setForeground(new java.awt.Color(153, 0, 153));
@@ -185,12 +193,12 @@ public class InventarioProductoFushimiStore extends javax.swing.JFrame {
         jLabel7.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 153, 255), new java.awt.Color(255, 153, 255)));
         jPanelDatos.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 80, 20));
 
-        jTextFieldBarraBuscador3.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldPrecio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldBarraBuscador3ActionPerformed(evt);
+                jTextFieldPrecioActionPerformed(evt);
             }
         });
-        jPanelDatos.add(jTextFieldBarraBuscador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 130, 20));
+        jPanelDatos.add(jTextFieldPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 130, 20));
 
         jLabelBuscador4.setFont(new java.awt.Font("SimSun", 1, 14)); // NOI18N
         jLabelBuscador4.setForeground(new java.awt.Color(153, 0, 153));
@@ -200,12 +208,12 @@ public class InventarioProductoFushimiStore extends javax.swing.JFrame {
         jLabel8.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 153, 255), new java.awt.Color(255, 153, 255)));
         jPanelDatos.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 80, 20));
 
-        jTextFieldBarraBuscador4.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldCantidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldBarraBuscador4ActionPerformed(evt);
+                jTextFieldCantidadActionPerformed(evt);
             }
         });
-        jPanelDatos.add(jTextFieldBarraBuscador4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 130, 20));
+        jPanelDatos.add(jTextFieldCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 130, 20));
 
         jLabelBuscador5.setFont(new java.awt.Font("SimSun", 1, 14)); // NOI18N
         jLabelBuscador5.setForeground(new java.awt.Color(153, 0, 153));
@@ -326,33 +334,38 @@ public class InventarioProductoFushimiStore extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jLabelBotonVolverPrincipalActionPerformed
 
-    private void jTextFieldBarraBuscadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBarraBuscadorActionPerformed
+    private void jTextFieldNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldBarraBuscadorActionPerformed
+    }//GEN-LAST:event_jTextFieldNombreActionPerformed
 
     private void jButtonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonEliminarActionPerformed
 
     private void jButtonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarActionPerformed
-        // TODO add your handling code here:
+            try {
+                Agregar();
+            } catch (Exception ex) {
+                Logger.getLogger(InventarioProductoFushimiStore.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        consultar();
     }//GEN-LAST:event_jButtonAgregarActionPerformed
 
-    private void jTextFieldBarraBuscador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBarraBuscador1ActionPerformed
+    private void jTextFieldCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCategoriaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldBarraBuscador1ActionPerformed
+    }//GEN-LAST:event_jTextFieldCategoriaActionPerformed
 
-    private void jTextFieldBarraBuscador2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBarraBuscador2ActionPerformed
+    private void jTextFieldModeloPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldModeloPActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldBarraBuscador2ActionPerformed
+    }//GEN-LAST:event_jTextFieldModeloPActionPerformed
 
-    private void jTextFieldBarraBuscador3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBarraBuscador3ActionPerformed
+    private void jTextFieldPrecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPrecioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldBarraBuscador3ActionPerformed
+    }//GEN-LAST:event_jTextFieldPrecioActionPerformed
 
-    private void jTextFieldBarraBuscador4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBarraBuscador4ActionPerformed
+    private void jTextFieldCantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCantidadActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldBarraBuscador4ActionPerformed
+    }//GEN-LAST:event_jTextFieldCantidadActionPerformed
 
     private void jTextFieldBarraBuscador5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBarraBuscador5ActionPerformed
         // TODO add your handling code here:
@@ -418,6 +431,52 @@ public class InventarioProductoFushimiStore extends javax.swing.JFrame {
         } catch (Exception e) {
         }
     }
+    
+    void Agregar() throws Exception{
+        String nombre = jTextFieldNombre.getText();
+        String categoria = jTextFieldCategoria.getText();
+        String modeloP = jTextFieldModeloP.getText();
+        String precio = jTextFieldPrecio.getText();
+        int precio1 = Integer.parseInt(precio);
+        String cantidad = jTextFieldCantidad.getText();
+        int cantidad1 = Integer.parseInt(cantidad);
+        invp.agregarProducto( nombre, categoria, modeloP, precio1, cantidad1);
+    }
+    
+        
+        /*
+        /try {
+            if (nombre.equals("") || categoria.equals("") || modeloP.equals("") || precio.equals("") || cantidad.equals("") ){
+                
+                JOptionPane.showMessageDialog(null, "Faltan ingresar datos.");
+                limpiarTabla();
+                
+            }else{
+                
+                String sql = "INSERT INTO PRODUCTO(NOMBRE_PRODUCTO, CATEGORIA_PRODUCTO, MODELO_PRODUCTO, PRECIO_PRODUCTO, CANTIDAD_PRODUCTO) values ('"+nombre+"','"+categoria+"','"+modeloP+"','"+precio+"', '"+cantidad+"')";
+                conect = con.getConnection();
+                st = conect.createStatement();
+                st.executeUpdate(sql);
+                JOptionPane.showMessageDialog(null, "Nuevo producto.");
+                limpiarTabla();
+            }
+            
+            
+        } catch (Exception e) {
+        }
+    }
+        
+        
+    void limpiarTabla() {
+        
+        for (int i = 0; i <= Tabla.getRowCount(); i++ ){
+            
+            modelo.removeRow(i);
+            i = i-1;
+        }
+    }
+                
+    */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Tabla;
@@ -448,12 +507,12 @@ public class InventarioProductoFushimiStore extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelDatos;
     private javax.swing.JPanel jPanelTabla;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextFieldBarraBuscador;
-    private javax.swing.JTextField jTextFieldBarraBuscador1;
-    private javax.swing.JTextField jTextFieldBarraBuscador2;
-    private javax.swing.JTextField jTextFieldBarraBuscador3;
-    private javax.swing.JTextField jTextFieldBarraBuscador4;
     private javax.swing.JTextField jTextFieldBarraBuscador5;
+    private javax.swing.JTextField jTextFieldCantidad;
+    private javax.swing.JTextField jTextFieldCategoria;
+    private javax.swing.JTextField jTextFieldModeloP;
+    private javax.swing.JTextField jTextFieldNombre;
+    private javax.swing.JTextField jTextFieldPrecio;
     private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }

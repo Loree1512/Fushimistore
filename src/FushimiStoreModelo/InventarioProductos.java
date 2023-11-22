@@ -6,19 +6,23 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Loreto
  */
 public class InventarioProductos {
+
+    private static Object Tabla;
+    DefaultTableModel modelo1;
     
 
 
     public InventarioProductos() {
     }
-    
-    public static void mostrarProductos() throws Exception {
+ /*   
+    public static void mostrarProductos(DefaultTableModel modelo1) throws Exception {
         String sql = "SELECT * FROM PRODUCTO";
         try (Connection connection = ConexionBD.obtenerConexion();
              PreparedStatement statement = connection.prepareStatement(sql);
@@ -26,40 +30,43 @@ public class InventarioProductos {
 
             while (resultSet.next()) {
                 int id = resultSet.getInt("ID");
-                String nombre = resultSet.getString("NOMBRE");
-                String categoria = resultSet.getString("CATEGORÍA");
-                String modelo = resultSet.getString("MODELO");
-                int precio = resultSet.getInt("PRECIO");
-                int cantidad = resultSet.getInt("CANTIDAD");
+                String nombre = resultSet.getString("NOMBRE_PRODUCTO");
+                String categoria = resultSet.getString("CATEGORÍA_PRODUCTO");
+                String modelo = resultSet.getString("MODELO_PRODUCTO");
+                int precio = resultSet.getInt("PRECIO_PRODUCTO");
+                int cantidad = resultSet.getInt("CANTIDAD_PRODUCTO");
+                Object[] PRODUCTO = new Object[6];
+                modelo1 = (DefaultTableModel) Tabla.getModel();
+                PRODUCTO [0] = id;
+                PRODUCTO [1] = nombre;
+                PRODUCTO [2] = categoria;
+                PRODUCTO [3] = modelo;
+                PRODUCTO [4] = precio;
+                PRODUCTO [5] = cantidad;
+                
+                modelo1.addRow(PRODUCTO);
+            }
+            Tabla.setModel(modelo1);
+            
+        } catch (Exception e) {
                 System.out.println("ID: " + id + ", NOMBRE: " + nombre + ", CATEGORÍA: " + categoria + ", MODELO: " + modelo + ", PRECIO: " + precio + ", CANTIDAD: " + cantidad);
             }
-
-        } catch (SQLException e) {
+        
+        catch (SQLException e) {
             System.err.println("Error al obtener la lista de productos: " + e.getMessage());
         }
-    }
-
-    public static void agregarProducto() throws Exception {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Nombre del producto: ");
-        String nombre = scanner.nextLine();
-        System.out.print("Categoría del producto: ");
-        String categoria = scanner.nextLine();
-        System.out.print("Modelo del producto: ");
-        String modelo = scanner.nextLine();
-        System.out.print("Precio del producto: ");
-        String precio = scanner.nextLine();
-        System.out.print("Cantidad de productos: ");
-        String cantidad = scanner.nextLine();
-
+    }/
+*/
+    public static void agregarProducto(String nombre,String categoria, String modelo,int precio1, int cantidad1 ) throws Exception {
+        
         try (Connection connection = ConexionBD.obtenerConexion()) {
-            String sql = "INSERT INTO PRODUCTO (ID, NOMBRE, CATEGORÍA, MODELO, PRECIO, CANTIDAD) VALUES (LIBRO_SEQ.NEXTVAL, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO PRODUCTO (ID, NOMBRE_PRODUCTO, CATEGORIA_PRODUCTO, MODELO_PRODUCTO, PRECIO_PRODUCTO, CANTIDAD_PRODUCTO) VALUES (PRODUCTO_SEQ.NEXTVAL, ?, ?, ?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, nombre);
             statement.setString(2, categoria);
             statement.setString(3, modelo);
-            statement.setString(4, precio);
-            statement.setString(4, cantidad);
+            statement.setInt(4, precio1);
+            statement.setInt(5, cantidad1);
             statement.executeUpdate();
 
             System.out.println("Producto añadido exitosamente.");

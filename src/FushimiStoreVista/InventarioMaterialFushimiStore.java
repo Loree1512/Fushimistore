@@ -4,7 +4,15 @@
  */
 package FushimiStoreVista;
 
+import FushimiStoreModelo.ConexionBD;
+import FushimiStoreModelo.InventarioMateriales;
 import FushimiStoreUtils.Utils;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 
 
 /**
@@ -12,14 +20,26 @@ import FushimiStoreUtils.Utils;
  * @author Kate
  */
 public class InventarioMaterialFushimiStore extends javax.swing.JFrame {
+    
 
     /**
      * Creates new form InventarioMaterialFushimiStore
      */
+    private final InventarioMateriales invp ;
+    ConexionBD con = new ConexionBD();
+        Connection conect;
+        DefaultTableModel modelo;
+        Statement st;
+        ResultSet rs;
+        int idc;
+    
+    
+    
     public InventarioMaterialFushimiStore() {
         initComponents();
         this.setLocationRelativeTo(null);
         Utils.cambiarFondoJFrame(this);
+        invp = new InventarioMateriales();
     }
 
 
@@ -34,22 +54,19 @@ public class InventarioMaterialFushimiStore extends javax.swing.JFrame {
         jPanelDatos = new javax.swing.JPanel();
         jLabelBuscador1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextFieldBarraBuscador1 = new javax.swing.JTextField();
+        jTextFieldNombre = new javax.swing.JTextField();
         jCheckBoxNombre1 = new javax.swing.JCheckBox();
         jCheckBoxCategoria1 = new javax.swing.JCheckBox();
         jCheckBoxModelo1 = new javax.swing.JCheckBox();
         jLabelBuscador2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextFieldBarraBuscador2 = new javax.swing.JTextField();
-        jLabelBuscador3 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jTextFieldBarraBuscador3 = new javax.swing.JTextField();
+        jTextFieldCategoria = new javax.swing.JTextField();
         jLabelBuscador4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextFieldBarraBuscador4 = new javax.swing.JTextField();
+        jTextFieldPrecio = new javax.swing.JTextField();
         jLabelBuscador5 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jTextFieldBarraBuscador5 = new javax.swing.JTextField();
+        jTextFieldCantidad = new javax.swing.JTextField();
         jLabelBuscador6 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jTextFieldBarraBuscador6 = new javax.swing.JTextField();
@@ -108,21 +125,21 @@ public class InventarioMaterialFushimiStore extends javax.swing.JFrame {
         jLabel5.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 153, 255), new java.awt.Color(255, 153, 255)));
         jPanelDatos.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 80, 20));
 
-        jTextFieldBarraBuscador1.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldBarraBuscador1ActionPerformed(evt);
+                jTextFieldNombreActionPerformed(evt);
             }
         });
-        jPanelDatos.add(jTextFieldBarraBuscador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 130, 20));
+        jPanelDatos.add(jTextFieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 130, 20));
 
         jCheckBoxNombre1.setText("Nombre");
-        jPanelDatos.add(jCheckBoxNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, -1, -1));
+        jPanelDatos.add(jCheckBoxNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, -1, -1));
 
         jCheckBoxCategoria1.setText("Categoria");
-        jPanelDatos.add(jCheckBoxCategoria1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, -1, -1));
+        jPanelDatos.add(jCheckBoxCategoria1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, -1, -1));
 
         jCheckBoxModelo1.setText("Modelo");
-        jPanelDatos.add(jCheckBoxModelo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 130, -1, -1));
+        jPanelDatos.add(jCheckBoxModelo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 120, -1, -1));
 
         jLabelBuscador2.setFont(new java.awt.Font("SimSun", 1, 14)); // NOI18N
         jLabelBuscador2.setForeground(new java.awt.Color(153, 0, 153));
@@ -132,27 +149,12 @@ public class InventarioMaterialFushimiStore extends javax.swing.JFrame {
         jLabel6.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 153, 255), new java.awt.Color(255, 153, 255)));
         jPanelDatos.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 90, 20));
 
-        jTextFieldBarraBuscador2.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldBarraBuscador2ActionPerformed(evt);
+                jTextFieldCategoriaActionPerformed(evt);
             }
         });
-        jPanelDatos.add(jTextFieldBarraBuscador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 130, 20));
-
-        jLabelBuscador3.setFont(new java.awt.Font("SimSun", 1, 14)); // NOI18N
-        jLabelBuscador3.setForeground(new java.awt.Color(153, 0, 153));
-        jLabelBuscador3.setText("Modelo");
-        jPanelDatos.add(jLabelBuscador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, 20));
-
-        jLabel7.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 153, 255), new java.awt.Color(255, 153, 255)));
-        jPanelDatos.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 80, 20));
-
-        jTextFieldBarraBuscador3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldBarraBuscador3ActionPerformed(evt);
-            }
-        });
-        jPanelDatos.add(jTextFieldBarraBuscador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 130, 20));
+        jPanelDatos.add(jTextFieldCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 130, 20));
 
         jLabelBuscador4.setFont(new java.awt.Font("SimSun", 1, 14)); // NOI18N
         jLabelBuscador4.setForeground(new java.awt.Color(153, 0, 153));
@@ -162,42 +164,42 @@ public class InventarioMaterialFushimiStore extends javax.swing.JFrame {
         jLabel8.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 153, 255), new java.awt.Color(255, 153, 255)));
         jPanelDatos.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 80, 20));
 
-        jTextFieldBarraBuscador4.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldPrecio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldBarraBuscador4ActionPerformed(evt);
+                jTextFieldPrecioActionPerformed(evt);
             }
         });
-        jPanelDatos.add(jTextFieldBarraBuscador4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 130, 20));
+        jPanelDatos.add(jTextFieldPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 130, 20));
 
         jLabelBuscador5.setFont(new java.awt.Font("SimSun", 1, 14)); // NOI18N
         jLabelBuscador5.setForeground(new java.awt.Color(153, 0, 153));
         jLabelBuscador5.setText("Cantidad");
-        jPanelDatos.add(jLabelBuscador5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, 20));
+        jPanelDatos.add(jLabelBuscador5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, 20));
 
         jLabel9.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 153, 255), new java.awt.Color(255, 153, 255)));
-        jPanelDatos.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 80, 20));
+        jPanelDatos.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 80, 20));
 
-        jTextFieldBarraBuscador5.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldCantidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldBarraBuscador5ActionPerformed(evt);
+                jTextFieldCantidadActionPerformed(evt);
             }
         });
-        jPanelDatos.add(jTextFieldBarraBuscador5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 130, 20));
+        jPanelDatos.add(jTextFieldCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 130, 20));
 
         jLabelBuscador6.setFont(new java.awt.Font("SimSun", 1, 14)); // NOI18N
         jLabelBuscador6.setForeground(new java.awt.Color(153, 0, 153));
         jLabelBuscador6.setText("Buscador");
-        jPanelDatos.add(jLabelBuscador6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 70, 20));
+        jPanelDatos.add(jLabelBuscador6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 70, 20));
 
         jLabel10.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 153, 255), new java.awt.Color(255, 153, 255)));
-        jPanelDatos.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 80, 20));
+        jPanelDatos.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 80, 20));
 
         jTextFieldBarraBuscador6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldBarraBuscador6ActionPerformed(evt);
             }
         });
-        jPanelDatos.add(jTextFieldBarraBuscador6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 360, 20));
+        jPanelDatos.add(jTextFieldBarraBuscador6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 360, 20));
 
         getContentPane().add(jPanelDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 480, 160));
 
@@ -255,6 +257,7 @@ public class InventarioMaterialFushimiStore extends javax.swing.JFrame {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
                 {null, null, null, null, null, null}
             },
             new String [] {
@@ -275,7 +278,7 @@ public class InventarioMaterialFushimiStore extends javax.swing.JFrame {
 
         TablaM.add(jScrollPane1);
 
-        getContentPane().add(TablaM, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 460, 200));
+        getContentPane().add(TablaM, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 460, 240));
 
         jLabel3.setFont(new java.awt.Font("Goudy Old Style", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(92, 24, 125));
@@ -307,32 +310,35 @@ public class InventarioMaterialFushimiStore extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jLabelBotonVolverPrincipalActionPerformed
 
-    private void jTextFieldBarraBuscador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBarraBuscador1ActionPerformed
+    private void jTextFieldNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldBarraBuscador1ActionPerformed
+    }//GEN-LAST:event_jTextFieldNombreActionPerformed
 
-    private void jTextFieldBarraBuscador2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBarraBuscador2ActionPerformed
+    private void jTextFieldCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCategoriaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldBarraBuscador2ActionPerformed
+    }//GEN-LAST:event_jTextFieldCategoriaActionPerformed
 
-    private void jTextFieldBarraBuscador3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBarraBuscador3ActionPerformed
+    private void jTextFieldPrecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPrecioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldBarraBuscador3ActionPerformed
+    }//GEN-LAST:event_jTextFieldPrecioActionPerformed
 
-    private void jTextFieldBarraBuscador4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBarraBuscador4ActionPerformed
+    private void jTextFieldCantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCantidadActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldBarraBuscador4ActionPerformed
-
-    private void jTextFieldBarraBuscador5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBarraBuscador5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldBarraBuscador5ActionPerformed
+    }//GEN-LAST:event_jTextFieldCantidadActionPerformed
 
     private void jTextFieldBarraBuscador6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBarraBuscador6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldBarraBuscador6ActionPerformed
 
     private void jButtonAgregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregar1ActionPerformed
-        // TODO add your handling code here:
+        try {
+             Agregar();
+                
+            } catch (Exception ex) {
+                Logger.getLogger(InventarioProductoFushimiStore.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        consultar();
+   
     }//GEN-LAST:event_jButtonAgregar1ActionPerformed
 
     private void jButtonEliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminar1ActionPerformed
@@ -374,6 +380,40 @@ public class InventarioMaterialFushimiStore extends javax.swing.JFrame {
         });
     }
     
+void consultar(){
+        String sql = "SELECT * FROM PRODUCTO";
+        try 
+        {
+            conect = con.getConnection();
+            st = conect.createStatement();
+            rs = st.executeQuery(sql);
+            Object[] MATERIAL = new Object[5];
+            modelo = (DefaultTableModel) jTable1.getModel();
+            while (rs.next()){
+                MATERIAL [0] = rs.getInt("ID");
+                MATERIAL [1] = rs.getString("NOMBRE_MATERIAL");
+                MATERIAL [2] = rs.getString("CATEGORIA_PRODUCTO");
+                MATERIAL [3] = rs.getInt("PRECIO_MATERIAL");
+                MATERIAL [4] = rs.getInt("CANTIDAD_MATERIAL");
+                
+                modelo.addRow(MATERIAL);
+            }
+            jTable1.setModel(modelo);
+            
+        } catch (Exception e) {
+        }
+    }
+    
+    void Agregar() throws Exception {
+
+        String nombre = jTextFieldNombre.getText();
+        String categoria = jTextFieldCategoria.getText();      
+        String precio = jTextFieldPrecio.getText();
+        int precio1 = Integer.parseInt(precio);
+        String cantidad = jTextFieldCantidad.getText();
+        int cantidad1 = Integer.parseInt(cantidad);
+        invp.agregarMaterial( nombre, categoria, precio1, cantidad1);
+    }
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -390,14 +430,12 @@ public class InventarioMaterialFushimiStore extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JButton jLabelBotonSalirPrincipal;
     private javax.swing.JToggleButton jLabelBotonVolverPrincipal;
     private javax.swing.JLabel jLabelBuscador1;
     private javax.swing.JLabel jLabelBuscador2;
-    private javax.swing.JLabel jLabelBuscador3;
     private javax.swing.JLabel jLabelBuscador4;
     private javax.swing.JLabel jLabelBuscador5;
     private javax.swing.JLabel jLabelBuscador6;
@@ -406,11 +444,10 @@ public class InventarioMaterialFushimiStore extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextFieldBarraBuscador1;
-    private javax.swing.JTextField jTextFieldBarraBuscador2;
-    private javax.swing.JTextField jTextFieldBarraBuscador3;
-    private javax.swing.JTextField jTextFieldBarraBuscador4;
-    private javax.swing.JTextField jTextFieldBarraBuscador5;
     private javax.swing.JTextField jTextFieldBarraBuscador6;
+    private javax.swing.JTextField jTextFieldCantidad;
+    private javax.swing.JTextField jTextFieldCategoria;
+    private javax.swing.JTextField jTextFieldNombre;
+    private javax.swing.JTextField jTextFieldPrecio;
     // End of variables declaration//GEN-END:variables
 }

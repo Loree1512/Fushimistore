@@ -29,6 +29,7 @@ public class test {
                 String modelo = resultSet.getString("MODELO_PRODUCTO");
                 int precio = resultSet.getInt("PRECIO_PRODUCTO");
                 int cantidad = resultSet.getInt("CANTIDAD_PRODUCTO");
+                
                 System.out.println("ID: " + id + ", NOMBRE: " + nombre + ", CATEGORÍA: " + categoria + ", MODELO: " + modelo + ", PRECIO: " + precio + ", CANTIDAD: " + cantidad);
             }
 

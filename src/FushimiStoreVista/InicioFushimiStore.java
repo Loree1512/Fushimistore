@@ -53,6 +53,7 @@ public class InicioFushimiStore extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 102, 102));
         jLabel16.setText("Producto:");
         getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 70, 30));
 
@@ -81,6 +82,7 @@ public class InicioFushimiStore extends javax.swing.JFrame {
         getContentPane().add(jButtonInventario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 160, 30));
 
         jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(0, 102, 102));
         jLabel18.setText("Materiales:");
         getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, 70, 30));
 

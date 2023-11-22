@@ -39,24 +39,15 @@ public class InventarioMateriales {
         }
     }
 
-    public static void agregarMaterial() throws Exception {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Nombre del material: ");
-        String nombre = scanner.nextLine();
-        System.out.print("Categoría del material: ");
-        String categoria = scanner.nextLine();
-        System.out.print("Precio del material: ");
-        String precio = scanner.nextLine();
-        System.out.print("Cantidad de material: ");
-        String cantidad = scanner.nextLine();
+    public static void agregarMaterial(String nombre, String categoria, int precio1, int cantidad1) throws Exception {
 
         try (Connection connection = ConexionBD.obtenerConexion()) {
-            String sql = "INSERT INTO MATERIAL (ID, NOMBRE, CATEGORÍA, PRECIO, CANTIDAD) VALUES (LIBRO_SEQ.NEXTVAL, ?, ?, ?, ?)";
+            String sql = "INSERT INTO MATERIAL (ID, NOMBRE_MATERIAL, CATEGORIA_MATERIAL, PRECIO_MATERIAL, CANTIDAD_MATERIAL) VALUES (MATERIAL_SEQ.NEXTVAL, ?, ?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, nombre);
             statement.setString(2, categoria);
-            statement.setString(4, precio);
-            statement.setString(4, cantidad);
+            statement.setInt(3, precio1);
+            statement.setInt(4, cantidad1);
             statement.executeUpdate();
 
             System.out.println("Material añadido exitosamente.");
