@@ -24,6 +24,16 @@ public class IdeaFushimiStore extends javax.swing.JFrame {
     private void initComponents() {
 
         jCalendar1 = new com.toedter.calendar.JCalendar();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList2 = new javax.swing.JList<>();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jList3 = new javax.swing.JList<>();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jLabelBotonSalirPrincipal = new javax.swing.JButton();
         jLabelBotonVolverPrincipal = new javax.swing.JToggleButton();
         jLabel3 = new javax.swing.JLabel();
@@ -37,6 +47,52 @@ public class IdeaFushimiStore extends javax.swing.JFrame {
         setIconImage(getIconImage());
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(236, 255, 236));
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(218, 246, 190), new java.awt.Color(218, 246, 190)));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jList1);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 110, 360));
+
+        jList2.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(jList2);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 150, 360));
+
+        jList3.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane3.setViewportView(jList3);
+
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 190, 360));
+
+        jLabel4.setBackground(new java.awt.Color(236, 255, 236));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel4.setText("ID");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 110, 20));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel5.setText("Nombre");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 150, 20));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel6.setText("URL");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 190, 20));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 470, 390));
 
         jLabelBotonSalirPrincipal.setBackground(new java.awt.Color(193, 161, 224));
         jLabelBotonSalirPrincipal.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
@@ -66,26 +122,26 @@ public class IdeaFushimiStore extends javax.swing.JFrame {
         jLabel3.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(112, 193, 193), new java.awt.Color(112, 193, 193)));
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 490, 410));
 
-        jButtonAgregar.setBackground(new java.awt.Color(255, 153, 204));
+        jButtonAgregar.setBackground(new java.awt.Color(218, 246, 190));
         jButtonAgregar.setFont(new java.awt.Font("Tw Cen MT", 1, 16)); // NOI18N
-        jButtonAgregar.setForeground(new java.awt.Color(153, 0, 102));
+        jButtonAgregar.setForeground(new java.awt.Color(0, 153, 0));
         jButtonAgregar.setText("Agregar");
         getContentPane().add(jButtonAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 100, 30));
 
-        jButtonEliminar.setBackground(new java.awt.Color(255, 153, 204));
+        jButtonEliminar.setBackground(new java.awt.Color(218, 246, 190));
         jButtonEliminar.setFont(new java.awt.Font("Tw Cen MT", 1, 16)); // NOI18N
-        jButtonEliminar.setForeground(new java.awt.Color(153, 0, 102));
+        jButtonEliminar.setForeground(new java.awt.Color(0, 153, 0));
         jButtonEliminar.setText("Eliminar");
         getContentPane().add(jButtonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 100, 30));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(153, 0, 153));
+        jLabel2.setForeground(new java.awt.Color(0, 102, 51));
         jLabel2.setText("Nuevas ideas!");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 270, 40));
 
         jTextField1.setForeground(new java.awt.Color(153, 153, 153));
         jTextField1.setText("Buscador");
-        jTextField1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 204, 255), new java.awt.Color(255, 204, 255), new java.awt.Color(255, 204, 255), new java.awt.Color(255, 204, 255)));
+        jTextField1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 255, 204), new java.awt.Color(204, 255, 204), new java.awt.Color(204, 255, 204), new java.awt.Color(204, 255, 204)));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -94,10 +150,11 @@ public class IdeaFushimiStore extends javax.swing.JFrame {
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 300, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FushimiStoreImg/fondo_blanco_corazon_morado.jpg"))); // NOI18N
+        jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 255, 51), new java.awt.Color(0, 255, 51)));
         jLabel1.setMaximumSize(new java.awt.Dimension(564, 660));
         jLabel1.setMinimumSize(new java.awt.Dimension(564, 660));
         jLabel1.setPreferredSize(new java.awt.Dimension(564, 660));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -107,8 +164,8 @@ public class IdeaFushimiStore extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelBotonSalirPrincipalActionPerformed
 
     private void jLabelBotonVolverPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLabelBotonVolverPrincipalActionPerformed
-        PrincipalFushimiStore principal = new PrincipalFushimiStore();
-        principal.setVisible(true);
+        InicioFushimiStore inicio = new InicioFushimiStore();
+        inicio.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jLabelBotonVolverPrincipalActionPerformed
 
@@ -158,8 +215,18 @@ public class IdeaFushimiStore extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JButton jLabelBotonSalirPrincipal;
     private javax.swing.JToggleButton jLabelBotonVolverPrincipal;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JList<String> jList2;
+    private javax.swing.JList<String> jList3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

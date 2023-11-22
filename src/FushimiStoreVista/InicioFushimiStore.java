@@ -1,46 +1,35 @@
 
-
 package FushimiStoreVista;
 
-import FushimiStoreModelo.ConexionBD;
 import FushimiStoreUtils.Utils;
-
 
 /**
  *
  * @author Kate
  */
-public class PrincipalFushimiStore extends javax.swing.JFrame {
-    
-   
+public class InicioFushimiStore extends javax.swing.JFrame {
 
-    public PrincipalFushimiStore(ConexionBD db) {
-        
+    /**
+     * Creates new form InicioFushimiStore
+     */
+    public InicioFushimiStore() {
         initComponents();
         this.setLocationRelativeTo(null);
         Utils.cambiarFondoJFrame(this);
-        
     }
 
-    public PrincipalFushimiStore() {
-         
-    }
-    
-
-
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabelBotonSalirPrincipal = new javax.swing.JButton();
-        jButtonInventario2 = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jButtonInventario1 = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        jButtonInventario2 = new javax.swing.JButton();
+        jLabelBotonSalirPrincipal = new javax.swing.JButton();
         jButtonIdeas = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -60,36 +49,25 @@ public class PrincipalFushimiStore extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setIconImage(getIconImage());
-        setMinimumSize(new java.awt.Dimension(549, 660));
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabelBotonSalirPrincipal.setBackground(new java.awt.Color(193, 161, 224));
-        jLabelBotonSalirPrincipal.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
-        jLabelBotonSalirPrincipal.setForeground(new java.awt.Color(255, 255, 0));
-        jLabelBotonSalirPrincipal.setText("Salir");
-        jLabelBotonSalirPrincipal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jLabelBotonSalirPrincipalActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jLabelBotonSalirPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 10, 70, -1));
-
-        jButtonInventario2.setBackground(new java.awt.Color(164, 109, 164));
-        jButtonInventario2.setFont(new java.awt.Font("SimSun", 1, 14)); // NOI18N
-        jButtonInventario2.setForeground(new java.awt.Color(153, 255, 204));
-        jButtonInventario2.setText("INVENTARIO");
-        jButtonInventario2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonInventario2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonInventario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 310, 160, 30));
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel16.setText("Producto:");
         getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 70, 30));
+
+        jLabel5.setBackground(new java.awt.Color(225, 214, 235));
+        jLabel5.setFont(new java.awt.Font("Sitka Subheading", 0, 12)); // NOI18N
+        jLabel5.setText("En inventario tendrás la opción de ver todos tus productos, además de ingresar");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 450, 30));
+
+        jLabel4.setBackground(new java.awt.Color(225, 214, 235));
+        jLabel4.setFont(new java.awt.Font("Sitka Subheading", 0, 12)); // NOI18N
+        jLabel4.setText(" y eliminar elementos.");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 450, 30));
+
+        jLabel6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 153, 204), new java.awt.Color(255, 153, 204), new java.awt.Color(255, 153, 204), new java.awt.Color(255, 153, 204)));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 470, 50));
 
         jButtonInventario1.setBackground(new java.awt.Color(164, 109, 164));
         jButtonInventario1.setFont(new java.awt.Font("SimSun", 1, 14)); // NOI18N
@@ -106,18 +84,27 @@ public class PrincipalFushimiStore extends javax.swing.JFrame {
         jLabel18.setText("Materiales:");
         getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, 70, 30));
 
-        jLabel4.setBackground(new java.awt.Color(225, 214, 235));
-        jLabel4.setFont(new java.awt.Font("Sitka Subheading", 0, 12)); // NOI18N
-        jLabel4.setText(" y eliminar elementos.");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 450, 30));
+        jButtonInventario2.setBackground(new java.awt.Color(164, 109, 164));
+        jButtonInventario2.setFont(new java.awt.Font("SimSun", 1, 14)); // NOI18N
+        jButtonInventario2.setForeground(new java.awt.Color(153, 255, 204));
+        jButtonInventario2.setText("INVENTARIO");
+        jButtonInventario2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonInventario2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonInventario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 310, 160, 30));
 
-        jLabel5.setBackground(new java.awt.Color(225, 214, 235));
-        jLabel5.setFont(new java.awt.Font("Sitka Subheading", 0, 12)); // NOI18N
-        jLabel5.setText("En inventario tendrás la opción de ver todos tus productos, además de ingresar");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 450, 30));
-
-        jLabel6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 153, 204), new java.awt.Color(255, 153, 204), new java.awt.Color(255, 153, 204), new java.awt.Color(255, 153, 204)));
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 470, 50));
+        jLabelBotonSalirPrincipal.setBackground(new java.awt.Color(193, 161, 224));
+        jLabelBotonSalirPrincipal.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
+        jLabelBotonSalirPrincipal.setForeground(new java.awt.Color(255, 255, 0));
+        jLabelBotonSalirPrincipal.setText("Salir");
+        jLabelBotonSalirPrincipal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jLabelBotonSalirPrincipalActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jLabelBotonSalirPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 10, 70, -1));
 
         jButtonIdeas.setBackground(new java.awt.Color(164, 109, 164));
         jButtonIdeas.setFont(new java.awt.Font("SimSun", 1, 14)); // NOI18N
@@ -228,15 +215,17 @@ public class PrincipalFushimiStore extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(92, 24, 125));
         jLabel1.setText("Fushimi Store");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 120, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 120, -1));
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FushimiStoreImg/fondo_blanco_corazon_morado.jpg"))); // NOI18N
+        jLabel17.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(204, 204, 255), new java.awt.Color(204, 204, 255)));
         jLabel17.setMaximumSize(new java.awt.Dimension(564, 660));
         jLabel17.setMinimumSize(new java.awt.Dimension(564, 660));
         jLabel17.setPreferredSize(new java.awt.Dimension(564, 660));
         getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabelBotonSalirPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLabelBotonSalirPrincipalActionPerformed
@@ -273,7 +262,6 @@ public class PrincipalFushimiStore extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButtonInventario2ActionPerformed
 
-    
     /**
      * @param args the command line arguments
      */
@@ -291,20 +279,20 @@ public class PrincipalFushimiStore extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(IdeaFushimiStore.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InicioFushimiStore.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(IdeaFushimiStore.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InicioFushimiStore.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(IdeaFushimiStore.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InicioFushimiStore.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(IdeaFushimiStore.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InicioFushimiStore.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PrincipalFushimiStore().setVisible(true);
+                new InicioFushimiStore().setVisible(true);
             }
         });
     }
@@ -336,18 +324,4 @@ public class PrincipalFushimiStore extends javax.swing.JFrame {
     private javax.swing.JButton jLabelBotonSalirPrincipal;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
-
-    private static class RunnableImpl implements Runnable {
-
-        public RunnableImpl() {
-        }
-
-        @Override
-        public void run() {
-            new PrincipalFushimiStore().setVisible(true);
-             
-        }
-    }
-
-
-    }
+}

@@ -130,8 +130,8 @@ public class VentaFushimiStore extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelBotonSalirPrincipalActionPerformed
 
     private void jLabelBotonVolverPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLabelBotonVolverPrincipalActionPerformed
-        PrincipalFushimiStore principal = new PrincipalFushimiStore();
-        principal.setVisible(true);
+        InicioFushimiStore inicio = new InicioFushimiStore();
+        inicio.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jLabelBotonVolverPrincipalActionPerformed
 
