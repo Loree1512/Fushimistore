@@ -1,8 +1,8 @@
 
 package FushimiStoreVista;
 
-import java.awt.Image;
-import java.awt.Toolkit;
+import FushimiStoreUtils.Utils;
+
 
 /**
  *
@@ -16,13 +16,9 @@ public class InventarioProductoFushimiStore extends javax.swing.JFrame {
     public InventarioProductoFushimiStore() {
         initComponents();
         this.setLocationRelativeTo(null);
+        Utils.cambiarFondoJFrame(this);
     }
-    
-    @Override
-    public Image getIconImage(){
-        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("FushimiStoreImg/BunnyCatLogo.png"));
-        return retValue;
-    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -151,8 +147,10 @@ public class InventarioProductoFushimiStore extends javax.swing.JFrame {
         getContentPane().add(jButtonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 550, 100, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FushimiStoreImg/fondo_blanco_corazon_morado.jpg"))); // NOI18N
-        jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 153, 153), new java.awt.Color(0, 153, 153)));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 660));
+        jLabel1.setMaximumSize(new java.awt.Dimension(564, 660));
+        jLabel1.setMinimumSize(new java.awt.Dimension(564, 660));
+        jLabel1.setPreferredSize(new java.awt.Dimension(564, 660));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

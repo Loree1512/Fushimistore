@@ -1,8 +1,8 @@
 
 
 package FushimiStoreVista;
-import java.awt.Image;
-import java.awt.Toolkit;
+
+import FushimiStoreUtils.Utils;
 
 
 /**
@@ -17,14 +17,11 @@ public class PrincipalFushimiStore extends javax.swing.JFrame {
     public PrincipalFushimiStore() {
         initComponents();
         this.setLocationRelativeTo(null);
+        Utils.cambiarFondoJFrame(this);
         
     }
     
-    @Override
-    public Image getIconImage(){
-        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("FushimiStoreImg/BunnyCatLogo.png"));
-        return retValue;
-    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -60,8 +57,7 @@ public class PrincipalFushimiStore extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabelLogo = new javax.swing.JLabel();
-        jLabelFondoPrincipal = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
 
         jPopupMenuInventario.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 153, 204), new java.awt.Color(255, 153, 204)));
         jPopupMenuInventario.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
@@ -253,16 +249,11 @@ public class PrincipalFushimiStore extends javax.swing.JFrame {
         jLabel1.setText("Fushimi Store");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 120, -1));
 
-        jLabelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FushimiStoreImg/BunnyCatLogo.png"))); // NOI18N
-        getContentPane().add(jLabelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, -10, 420, 130));
-
-        jLabelFondoPrincipal.setBackground(new java.awt.Color(204, 204, 255));
-        jLabelFondoPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FushimiStoreImg/fondo_blanco_corazon_morado.jpg"))); // NOI18N
-        jLabelFondoPrincipal.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(204, 0, 204), new java.awt.Color(204, 0, 204)));
-        jLabelFondoPrincipal.setMaximumSize(new java.awt.Dimension(549, 660));
-        jLabelFondoPrincipal.setMinimumSize(new java.awt.Dimension(549, 660));
-        jLabelFondoPrincipal.setPreferredSize(new java.awt.Dimension(549, 660));
-        getContentPane().add(jLabelFondoPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FushimiStoreImg/fondo_blanco_corazon_morado.jpg"))); // NOI18N
+        jLabel17.setMaximumSize(new java.awt.Dimension(564, 660));
+        jLabel17.setMinimumSize(new java.awt.Dimension(564, 660));
+        jLabel17.setPreferredSize(new java.awt.Dimension(564, 660));
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -357,6 +348,7 @@ public class PrincipalFushimiStore extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -366,8 +358,6 @@ public class PrincipalFushimiStore extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JButton jLabelBotonSalirPrincipal;
-    private javax.swing.JLabel jLabelFondoPrincipal;
-    private javax.swing.JLabel jLabelLogo;
     private javax.swing.JMenuItem jMenuInventarioMaretial;
     private javax.swing.JMenuItem jMenuInventarioProducto;
     private javax.swing.JPanel jPanel1;

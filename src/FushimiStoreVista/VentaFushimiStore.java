@@ -1,11 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package FushimiStoreVista;
 
-import java.awt.Image;
-import java.awt.Toolkit;
+import FushimiStoreUtils.Utils;
+
 
 /**
  *
@@ -19,13 +16,14 @@ public class VentaFushimiStore extends javax.swing.JFrame {
     public VentaFushimiStore() {
         initComponents();
         this.setLocationRelativeTo(null);
+        Utils.cambiarFondoJFrame(this);
     }
 
-    @Override
-        public Image getIconImage(){
-        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("FushimiStoreImg/BunnyCatLogo.png"));
-        return retValue;
-    }
+    
+    
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -119,9 +117,10 @@ public class VentaFushimiStore extends javax.swing.JFrame {
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 300, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FushimiStoreImg/fondo_blanco_corazon_morado.jpg"))); // NOI18N
-        jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 204, 204), new java.awt.Color(0, 204, 204)));
-        jLabel1.setMaximumSize(new java.awt.Dimension(549, 660));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 549, 660));
+        jLabel1.setMaximumSize(new java.awt.Dimension(564, 660));
+        jLabel1.setMinimumSize(new java.awt.Dimension(564, 660));
+        jLabel1.setPreferredSize(new java.awt.Dimension(564, 660));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

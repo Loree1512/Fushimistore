@@ -1,8 +1,7 @@
 
 package FushimiStoreVista;
 
-import java.awt.Image;
-import java.awt.Toolkit;
+import FushimiStoreUtils.Utils;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
@@ -20,6 +19,7 @@ public class CalendarioFushimiStore extends javax.swing.JFrame {
     public CalendarioFushimiStore() {
         initComponents();
         this.setLocationRelativeTo(null);
+        Utils.cambiarFondoJFrame(this);
     }
     
     public void LimpiarTxt()
@@ -43,11 +43,7 @@ public class CalendarioFushimiStore extends javax.swing.JFrame {
         jDireccionEvento.setText(strDireccion[Registro]);
     }
     
-        @Override
-    public Image getIconImage(){
-        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("FushimiStoreImg/BunnyCatLogo.png"));
-        return retValue;
-    }
+
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -195,8 +191,10 @@ public class CalendarioFushimiStore extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 180, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FushimiStoreImg/fondo_blanco_corazon_morado.jpg"))); // NOI18N
-        jLabel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(204, 0, 153), new java.awt.Color(204, 0, 153)));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 549, 660));
+        jLabel1.setMaximumSize(new java.awt.Dimension(564, 660));
+        jLabel1.setMinimumSize(new java.awt.Dimension(564, 660));
+        jLabel1.setPreferredSize(new java.awt.Dimension(564, 660));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

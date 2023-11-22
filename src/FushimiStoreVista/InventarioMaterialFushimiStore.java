@@ -4,8 +4,8 @@
  */
 package FushimiStoreVista;
 
-import java.awt.Image;
-import java.awt.Toolkit;
+import FushimiStoreUtils.Utils;
+
 
 /**
  *
@@ -19,13 +19,10 @@ public class InventarioMaterialFushimiStore extends javax.swing.JFrame {
     public InventarioMaterialFushimiStore() {
         initComponents();
         this.setLocationRelativeTo(null);
+        Utils.cambiarFondoJFrame(this);
     }
 
-        @Override
-    public Image getIconImage(){
-        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("FushimiStoreImg/BunnyCatLogo.png"));
-        return retValue;
-    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -48,7 +45,7 @@ public class InventarioMaterialFushimiStore extends javax.swing.JFrame {
         jButtonEliminar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jLabelFONDO = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         jTextField1.setText("jTextField1");
 
@@ -143,9 +140,11 @@ public class InventarioMaterialFushimiStore extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 450, 400));
 
-        jLabelFONDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FushimiStoreImg/fondo_blanco_corazon_morado.jpg"))); // NOI18N
-        jLabelFONDO.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(255, 102, 204), new java.awt.Color(255, 102, 204)));
-        getContentPane().add(jLabelFONDO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 549, 660));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FushimiStoreImg/fondo_blanco_corazon_morado.jpg"))); // NOI18N
+        jLabel1.setMaximumSize(new java.awt.Dimension(564, 660));
+        jLabel1.setMinimumSize(new java.awt.Dimension(564, 660));
+        jLabel1.setPreferredSize(new java.awt.Dimension(564, 660));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -205,11 +204,11 @@ public class InventarioMaterialFushimiStore extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBoxCategoria;
     private javax.swing.JCheckBox jCheckBoxModelo;
     private javax.swing.JCheckBox jCheckBoxNombre;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JButton jLabelBotonSalirPrincipal;
     private javax.swing.JToggleButton jLabelBotonVolverPrincipal;
     private javax.swing.JLabel jLabelBuscador;
-    private javax.swing.JLabel jLabelFONDO;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;

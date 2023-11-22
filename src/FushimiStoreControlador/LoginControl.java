@@ -1,13 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package FushimiStoreControlador;
 
-import FushimiStoreModelo.ConexionBD;
-import FushimiStoreVista.VistaFushimiStore;
-import FushimiStoreVista.PrincipalFushimiStore;
-import javax.swing.JOptionPane;
+//import FushimiStoreModelo.ConexionBD;
+//import FushimiStoreVista.VistaFushimiStore;
+//import FushimiStoreVista.PrincipalFushimiStore;
+//import javax.swing.JOptionPane;
 
 /**
  *
@@ -15,15 +12,15 @@ import javax.swing.JOptionPane;
  */
 public class LoginControl {
     
-    private ConexionBD bd;
-    private VistaFushimiStore vistaLogin;
-    private PrincipalFushimiStore vistaPrincipal;
+    //private ConexionBD bd;
+    //private VistaFushimiStore vistaLogin;
+    //private PrincipalFushimiStore vistaPrincipal;
 
-    public LoginControl(ConexionBD bd, VistaFushimiStore vista) {
-        this.bd = bd;
-        this.vistaLogin = vista;
+    //public LoginControl(ConexionBD bd, VistaFushimiStore vista) {
+     //   this.bd = bd;
+     //   this.vistaLogin = vista;
     }
-
+/*
     public void handleLogin(String email, String password) {
         if (bd.validarCredenciales(email, password)) {
             JOptionPane.showMessageDialog(null, "Inicio de sesión correcto.", "Confirmación Login", 1);
@@ -40,3 +37,4 @@ public class LoginControl {
     }
     
 }
+*/
